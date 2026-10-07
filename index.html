@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Une liste de tâches simple pour organiser sa journée."
+    />
+    <title>Mes tâches — Todo list</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="todo-app">
+      <header class="app-header">
+        <p class="eyebrow">MON ESPACE PERSONNEL</p>
+        <h1>Mes tâches<span>.</span></h1>
+        <p class="subtitle">Une chose après l’autre, et tout avance.</p>
+      </header>
+
+      <section class="todo-card" aria-label="Liste de tâches">
+        <form class="todo-form" id="todo-form">
+          <label class="visually-hidden" for="todo-input">Nouvelle tâche</label>
+          <input
+            id="todo-input"
+            name="todo"
+            type="text"
+            placeholder="Ajouter une tâche..."
+            autocomplete="off"
+            maxlength="160"
+            required
+          />
+          <button class="add-button" type="submit" aria-label="Ajouter la tâche">
+            <span aria-hidden="true">+</span>
+          </button>
+        </form>
+
+        <div class="list-heading">
+          <h2>Ma liste</h2>
+          <span class="task-count" id="task-count" aria-live="polite"></span>
+        </div>
+
+        <div class="filters" role="group" aria-label="Filtrer les tâches">
+          <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">
+            Toutes
+          </button>
+          <button class="filter-button" type="button" data-filter="active" aria-pressed="false">
+            À faire
+          </button>
+          <button class="filter-button" type="button" data-filter="completed" aria-pressed="false">
+            Terminées
+          </button>
+        </div>
+
+        <ul class="todo-list" id="todo-list" aria-label="Tâches"></ul>
+        <p class="empty-state" id="empty-state">Aucune tâche pour le moment. Ajoutez-en une !</p>
+
+        <footer class="list-footer">
+          <span id="remaining-count"></span>
+          <button class="clear-button" id="clear-completed" type="button" hidden>
+            Effacer les tâches terminées
+          </button>
+        </footer>
+      </section>
+
+      <p class="page-note">Vos tâches restent en mémoire tant que la page est ouverte.</p>
+    </main>
+  </body>
+</html>
